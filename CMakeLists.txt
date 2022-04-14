@@ -95,10 +95,10 @@ install(DIRECTORY include/rot_conv/
 
 # Install shared library
 install(TARGETS rotconvshared
-				EXPORT export_${PROJECT_NAME}
-				ARCHIVE DESTINATION lib
+        EXPORT export_${PROJECT_NAME}
+        ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
-				RUNTIME DESTINATION bin)
+        RUNTIME DESTINATION bin)
 
 # Link dependencies
 ament_target_dependencies(rotconvstatic Eigen3)
