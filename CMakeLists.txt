@@ -1,6 +1,6 @@
 # Rotations Conversion Library project
 cmake_minimum_required(VERSION 2.8.12)
-project(rotconv)
+project(rot_conv)
 
 # Enable C++11
 message(STATUS "Enabling C++11")
