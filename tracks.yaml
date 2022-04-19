@@ -25,8 +25,7 @@ tracks:
     ros_distro: humble
     vcs_type: git
     vcs_uri: https://github.com/AIS-Bonn/rot_conv_lib.git
-    version: 1.0.11
-    version_saved: :{ask}
+    version: :{ask}
   rolling:
     actions:
     - bloom-export-upstream :{vcs_local_uri} :{vcs_type} --tag :{release_tag} --display-uri
