@@ -1,11 +1,15 @@
 # Rotations Conversion Library project
-cmake_minimum_required(VERSION 3.3)
-project(rot_conv)
+cmake_minimum_required(VERSION 2.8.12)
+project(rotconv)
 
 # Enable C++11
 message(STATUS "Enabling C++11")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 add_compile_options(-Wall -Wextra -Wpedantic)
+
+# Find Eigen
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
 
 # Include directories
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -81,33 +85,4 @@ if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/googletest)
 	add_test(test_rot_conv test_rot_conv)
 
 endif()
-
-# Find ament_cmake
-find_package(ament_cmake REQUIRED)
-
-# Find Eigen3 (See https://github.com/ros2/eigen3_cmake_module/blob/master/README.md for why we need eigen3_cmake_module)
-find_package(eigen3_cmake_module REQUIRED)
-find_package(Eigen3 REQUIRED)
-
-# Install include directory
-install(DIRECTORY include/rot_conv/
-        DESTINATION include/${PROJECT_NAME})
-
-# Install shared library
-install(TARGETS rotconvshared
-        EXPORT export_${PROJECT_NAME}
-        ARCHIVE DESTINATION lib
-        LIBRARY DESTINATION lib
-        RUNTIME DESTINATION bin)
-
-# Link dependencies
-ament_target_dependencies(rotconvstatic Eigen3)
-ament_target_dependencies(rotconvshared Eigen3)
-ament_target_dependencies(rot_conv_sample_direct Eigen3)
-
-ament_export_include_directories(include)
-ament_export_libraries(rotconvshared)
-ament_export_dependencies(eigen3_cmake_module Eigen3)
-ament_package()
-
 # EOF
