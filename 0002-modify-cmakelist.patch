@@ -1,4 +1,4 @@
-From caf69ef5f34cf433cc3d979a389cac7a14d710a1 Mon Sep 17 00:00:00 2001
+From dfb6668e6bf871da96a21a5d24081c8cebbbae88 Mon Sep 17 00:00:00 2001
 From: Kenji Brameld <kenjibrameld@gmail.com>
 Date: Thu, 14 Apr 2022 11:53:05 +0900
 Subject: [PATCH 2/3] modify cmakelist
@@ -65,5 +65,5 @@ index 0dcb6cf..f59b177 100644
 +
  # EOF
 -- 
-2.34.1
+2.35.3
 
